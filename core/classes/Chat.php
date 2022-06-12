@@ -2,6 +2,8 @@
 namespace MyApp;
 use Ratchet\MessageComponentInterface;
 use Ratchet\ConnectionInterface;
+require_once("../product/config.php");
+require_once("../product/logger.php");
 
 class Chat implements MessageComponentInterface {
     protected $clients;
@@ -15,6 +17,10 @@ class Chat implements MessageComponentInterface {
     public function onOpen(ConnectionInterface $conn) {
         $queryString = $conn->httpRequest->getUri()->getQuery();
         parse_str($queryString, $query);
+
+        $log = Logger::getInstance();
+        $log->info('info log.');
+
         if($data = $this->userObj->getUserBySessionID($query['token'])) {
             $this->userData = $data;
             $conn->userData = $data;
