@@ -11,6 +11,6 @@ require "classes/User.php";
 $account = new \MyApp\Account();
 $loadFromUser = new \MyApp\User();
 
-define("WWW_ROOT", "http://localhost/webrtc/");
+define("WWW_ROOT", "https://my-webrtc-video-chat.herokuapp.com/");
 
 require "functions.php";
