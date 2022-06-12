@@ -58,7 +58,7 @@ handle multiple concurrent connections without blocking.
 Here is a server that closes the connection if you send it anything:
 
 ```php
-$socket = new React\Socket\SocketServer('127.0.0.1:8080');
+$socket = new React\Socket\SocketServer('127.0.0.1:8090');
 
 $socket->on('connection', function (React\Socket\ConnectionInterface $connection) {
     $connection->write("Hello " . $connection->getRemoteAddress() . "!\n");
@@ -347,7 +347,7 @@ In order to accept plaintext TCP/IP connections, you can simply pass a host
 and port combination like this:
 
 ```php
-$socket = new React\Socket\SocketServer('127.0.0.1:8080');
+$socket = new React\Socket\SocketServer('127.0.0.1:8090');
 ```
 
 Listening on the localhost address `127.0.0.1` means it will not be reachable from
@@ -364,7 +364,7 @@ If you want to listen on an IPv6 address, you MUST enclose the host in square
 brackets:
 
 ```php
-$socket = new React\Socket\SocketServer('[::1]:8080');
+$socket = new React\Socket\SocketServer('[::1]:8090');
 ```
 
 In order to use a random port assignment, you can use the port `0`:
@@ -401,10 +401,10 @@ is already in use or port below 1024 may require root access etc.), it will
 throw a `RuntimeException`:
 
 ```php
-$first = new React\Socket\SocketServer('127.0.0.1:8080');
+$first = new React\Socket\SocketServer('127.0.0.1:8090');
 
 // throws RuntimeException because port is already in use
-$second = new React\Socket\SocketServer('127.0.0.1:8080');
+$second = new React\Socket\SocketServer('127.0.0.1:8090');
 ```
 
 > Note that these error conditions may vary depending on your system and/or
@@ -440,7 +440,7 @@ which in its most basic form may look something like this if you're using a
 PEM encoded certificate file:
 
 ```php
-$socket = new React\Socket\SocketServer('tls://127.0.0.1:8080', array(
+$socket = new React\Socket\SocketServer('tls://127.0.0.1:8090', array(
     'tls' => array(
         'local_cert' => 'server.pem'
     )
@@ -541,14 +541,14 @@ address through the first parameter provided to the constructor, optionally
 preceded by the `tcp://` scheme:
 
 ```php
-$server = new React\Socket\TcpServer('192.168.0.1:8080');
+$server = new React\Socket\TcpServer('192.168.0.1:8090');
 ```
 
 If you want to listen on an IPv6 address, you MUST enclose the host in square
 brackets:
 
 ```php
-$server = new React\Socket\TcpServer('[::1]:8080');
+$server = new React\Socket\TcpServer('[::1]:8090');
 ```
 
 If the given URI is invalid, does not contain a port, any other scheme or if it
@@ -564,10 +564,10 @@ is already in use or port below 1024 may require root access etc.), it will
 throw a `RuntimeException`:
 
 ```php
-$first = new React\Socket\TcpServer(8080);
+$first = new React\Socket\TcpServer(8090);
 
 // throws RuntimeException because port is already in use
-$second = new React\Socket\TcpServer(8080);
+$second = new React\Socket\TcpServer(8090);
 ```
 
 > Note that these error conditions may vary depending on your system and/or
