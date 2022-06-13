@@ -175,7 +175,7 @@ require "shared/header.php";
 <script src = "<?php echo url_for('assets/js/jquery.js'); ?>"></script>
 <script src = "<?php echo url_for('assets/js/common.js'); ?>"></script>
 <script>
-    var conn = new WebSocket('ws://localhost:8090/webrtc/?token=<?php echo $userData->sessionID; ?>');
+    var conn = new WebSocket('ws://my-webrtc-video-chat.herokuapp.com/?token=<?php echo $userData->sessionID; ?>');
 
 	conn.onopen = function(e) {
 		console.log("Connection established!");
