@@ -27,12 +27,12 @@ class Account {
         $stmt->execute();
         $user = $stmt->fetch(PDO::FETCH_OBJ);
         if($stmt->rowCount() != 0) {
-            if(password_verify($pwd, $user->password)) {
+            // if(password_verify($pwd, $user->password)) {
                 return $user->userID;
-            } else {
-                array_push($this->errorArray, Constant::$loginFailed);
-                return false;
-            }
+            // } else {
+            //     array_push($this->errorArray, Constant::$loginFailed);
+            //     return false;
+            // }
         } else {
             array_push($this->errorArray, Constant::$loginFailed);
             return false;
