@@ -220,7 +220,7 @@ require "shared/header.php";
 <script src = "<?php echo url_for('assets/js/jquery.js'); ?>"></script>
 <script src = "<?php echo url_for('assets/js/common.js'); ?>"></script>
 <script>
-    var conn = new WebSocket('wss://my-webrtc-video-chat.herokuapp.com/?token=<?php echo $userData->sessionID; ?>');
+    var conn = new WebSocket('wss://my-webrtc-video-chat.herokuapp.com:8080/?token=<?php echo $userData->sessionID; ?>');
 </script>
 <script src = "<?php echo url_for('assets/js/client.js'); ?>"></script>
 </body>
