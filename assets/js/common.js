@@ -1,4 +1,4 @@
-var base_url = 'http://localhost/webrtc/';
+var base_url = 'https://my-webrtc-video-chat.herokuapp.com/';
 
 function loadConnectedPeers(){
     var userid = $(".u-p-id").data('userid');
