@@ -226,6 +226,7 @@ $(document).on("click",".video-call", function(){
             })
         })
         peerConnection.createOffer(function(offer){
+            alert("Creating offer!")
             sendToServer('offer', offer, receiver);
             peerConnection.setLocalDescription(offer);
         },function(error){
